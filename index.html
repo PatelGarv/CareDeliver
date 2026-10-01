@@ -73,6 +73,14 @@
     }
   </style>
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const sb = supabase.createClient('https://oigbyqxxlsdfgziyxcki.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pZ2J5cXh4bHNkZmd6aXl4Y2tpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4NzE4MTAsImV4cCI6MjEwNjQ0NzgxMH0.3z4YrYL6JVcpp8a02mU_cwGRyYhCRywGTiKg0VrXXjY');
+  // Log every button click as an event
+  function logEvent(type, payload) {
+    sb.from('events').insert({ event_type: type, payload });
+  }
+</script>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white">
 
   <!-- Main Application Header -->
